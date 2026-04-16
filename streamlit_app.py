@@ -231,11 +231,13 @@ except Exception:
 if st.session_state.user_role is None:
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # Centered login form style container
+    # Responsive login form style container
     st.markdown("""
     <style>
+    /* Base styles */
     .login-container {
         max-width: 500px;
+        width: 90%;
         margin: 2rem auto;
         padding: 30px;
         background-color: #1e1e2f;
@@ -246,40 +248,89 @@ if st.session_state.user_role is None:
     .login-container h2 {
         text-align: center;
         margin-bottom: 5px;
+        font-size: 1.8rem;
     }
     .login-container p {
         text-align: center;
         color: #888;
         margin-top: 0;
+        font-size: 0.95rem;
     }
-    .login-container .stRadio {
-        justify-content: center;
+    
+    /* Radio button styling */
+    .role-selector {
+        width: 100%;
+        margin: 20px 0;
     }
-    .login-container .stButton {
-        margin-top: 20px;
+    
+    /* Button styling */
+    .login-container .stButton > button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .login-container {
+            width: 95%;
+            padding: 20px 15px;
+            margin: 1rem auto;
+        }
+        .login-container h2 {
+            font-size: 1.4rem;
+        }
+        .login-container p {
+            font-size: 0.85rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .login-container {
+            width: 95%;
+            padding: 15px 10px;
+            border-radius: 8px;
+        }
+        .login-container h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .login-container p {
+            font-size: 0.8rem;
+        }
+    }
+
+    /* Tablet responsiveness */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .login-container {
+            max-width: 450px;
+            padding: 25px;
+        }
     }
     </style>
     """, unsafe_allow_html=True)
 
     st.markdown("""
     <div class='login-container'>
-    <h2 style='margin-bottom: 5px;'>🔐 Select Your Access Level</h2>
-    <p style='color: #888; margin-top: 0;'>Please choose your role to continue</p>
+    <h2>🔐 Select Your Access Level</h2>
+    <p style='color: #888;'>Please choose your role to continue</p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Role selection - centered
-    col_center1, col_center2, col_center3 = st.columns([1, 2, 1])
-    with col_center2:
+    # Role selection - responsive columns
+    # On mobile: full width, on desktop: centered
+    col1, col2, col3 = st.columns([1, 6, 1])
+    with col2:
+        # Use horizontal radio on desktop, vertical on mobile
         role = st.radio(
             "I am a:",
             ["👤 User (Add Transactions)", "👨‍ Admin (View All)"],
             index=0,
             horizontal=True,
-            label_visibility="collapsed"
+            label_visibility="collapsed",
+            key="role_selection"
         )
 
-        if st.button("Continue", use_container_width=True):
+        if st.button("Continue", use_container_width=True, type="primary"):
             if "Admin" in role:
                 st.session_state.user_role = "admin_pending"
             else:
