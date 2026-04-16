@@ -37,7 +37,7 @@ if "admin_authenticated" not in st.session_state:
 # -----------CONFIGURATION (Hardcoded for easy updates)--------------------
 # Update these values to change credentials
 ADMIN_CREDENTIALS = {
-    "password": "12345"  # Change this to update admin password
+    "password": "password"  # Change this to update admin password
 }
 # -------- END OF CONFIGURATION ------------
 
