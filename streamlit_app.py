@@ -753,7 +753,7 @@ else:
             )
         if selected_store != st.session_state.selected_store:
             st.session_state.selected_store = selected_store
-            st.rerun()
+
         
     st.divider()
 
