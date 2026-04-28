@@ -157,11 +157,11 @@ st.markdown("""
     
     /* Force all text inputs to display as uppercase */
     input[type="text"], input[type="number"]{
-        text-transform: uppercase !important;
+        text-transform: !important;
     }
     /* Also style Streamlit's specific input styling */
     .stTextInput input, .stNumberInput input {
-        text-transform: uppercase !important;
+        text-transform: !important;
     }
     /* Navy blue ALL buttons */
     div.stButton > button {
@@ -494,10 +494,10 @@ else:
     col1, col2 = st.columns([2, 2])
     with col1:
         user_name = st.text_input(
-            "Name *", placeholder="Enter Full Name")
+            "Name *", placeholder="Enter Full Name").upper()
     with col2:
         store_name = st.text_input(
-            "SUKING TINDAHAN *", placeholder="Enter Store Name")
+            "SUKING TINDAHAN *", placeholder="Enter Store Name").upper()
 
     st.divider()
 
