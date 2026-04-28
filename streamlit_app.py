@@ -586,7 +586,7 @@ if st.session_state.user_role is None:
             key="role_selection"
         )
 
-        if st.button("Continue", use_container_width=True, type="primary"):
+        if st.button("Continue", type="primary"):
             if "Admin" in role:
                 st.session_state.user_role = "admin_pending"
             else:
