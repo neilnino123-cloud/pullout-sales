@@ -363,7 +363,7 @@ if st.session_state.user_role == "admin_pending":
 
     with col_login2:
         admin_password = st.text_input(
-            "Enter Admin Password", type="password", placeholder="Enter password" on_change=force_lower)
+            "Enter Admin Password", type="password", placeholder="Enter password", on_change=force_lower)
 
         col1, col2 = st.columns(2)
         with col1:
