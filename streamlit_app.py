@@ -567,16 +567,9 @@ if st.session_state.user_role is None:
 
     # Role selection - responsive columns
     # On mobile: full width, on desktop: centered
-    col1, col2, col3 = st.columns([1, 6, 1])
+    col1, col2, col3 = st.columns([1, 1, 1])
     with col2:
         # Use horizontal radio on desktop, vertical on mobile
-        st.markdown("""
-        <style>
-            .stRadio{ align-items: center;
-                justify-content: center;
-                }
-        </style>""", unsafe_allow_html=True) 
-
         role = st.radio(
             "I am a:",
             ["👤 User (Add Transactions)", "👨‍ Admin (View All)"],
@@ -586,7 +579,7 @@ if st.session_state.user_role is None:
             key="role_selection"
         )
 
-        if st.button("Continue", type="primary"):
+        if st.button("Continue", use_container_width=True, type="primary"):
             if "Admin" in role:
                 st.session_state.user_role = "admin_pending"
             else:
