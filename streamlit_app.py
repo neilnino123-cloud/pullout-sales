@@ -14,18 +14,18 @@ products = {
     "WORM X": {"PAD", "BOX"},
     "WORM X MAXX": {"PAD", "BOX"},
     "-- OTHERS --" : {},
-    "DOXA-V" : {"PC", "BOX", "BOTTLE", "PAD"},
-    "PARA-V" : {"PC", "BOX", "BOTTLE", "PAD"},
-    "TRIMAX" : {"PC", "BOX", "BOTTLE", "PAD"},
-    "MULTIMAX" : {"PC", "BOX", "BOTTLE", "PAD"},
-    "ELECTROMAX" : {"PC", "BOX", "BOTTLE", "PAD"},
-    "MULTIMAX D5" : {"PC", "BOX", "BOTTLE", "PAD"},
-    "DOX-C-LIN GOLD" : {"PC", "BOX", "BOTTLE", "PAD"},
-    "DOX-C-TRIN GOLD" : {"PC", "BOX", "BOTTLE", "PAD"},
-    "IRON-VET" : {"PC", "BOX", "BOTTLE", "PAD"},
-    "BULATIGOK SD" : {"PC", "BOX", "BOTTLE", "PAD"},
-    "TRIFAST" : {"PC", "BOX", "BOTTLE", "PAD"},
-    "ALAMYCIN LA" : {"PC", "BOX", "BOTTLE", "PAD"}
+    "DOXA-V" : {"PC", "BOX", "KL", "PAD"},
+    "PARA-V" : {"PC", "BOX", "KL", "PAD"},
+    "TRIMAX" : {"PC", "BOX"},
+    "MULTIMAX" : {"PC", "BOX"},
+    "ELECTROMAX" : {"PC", "BOX"},
+    "MULTIMAX D5" : {"BOTTLE", "BOX"},
+    "DOX-C-LIN GOLD" : {"PC", "BOX"},
+    "DOX-C-TRIN GOLD" : {"PC", "BOX"},
+    "IRON-VET" : {"BOTTLE", "BOX"},
+    "BULATIGOK SD" : {"PC", "BOX"},
+    "TRIFAST" : {"PC", "BOX"},
+    "ALAMYCIN LA" : {"BOTTLE", "BOX"}
 }
 
 stores = {
