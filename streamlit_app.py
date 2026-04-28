@@ -567,21 +567,22 @@ if st.session_state.user_role is None:
 
     # Role selection - responsive columns
     # On mobile: full width, on desktop: centered
-    st.markdown("""
+    col1, col2, col3 = st.columns([1, 6, 1])
+    with col2:
+        # Use horizontal radio on desktop, vertical on mobile
+        st.markdown("""
         <style>
             .stRadio{ align-items: center;
                 justify-content: center;
                 }
-        </style>""", unsafe_allow_html=True)
+        </style>""", unsafe_allow_html=True) 
 
-    col1, col2, col3 = st.columns([1, 6, 1])
-    with col2:
-        # Use horizontal radio on desktop, vertical on mobile
         role = st.radio(
             "I am a:",
             ["👤 User (Add Transactions)", "👨‍ Admin (View All)"],
             index=0,
             horizontal=True,
+            vertical=True,
             label_visibility="collapsed",
             key="role_selection"
         )
