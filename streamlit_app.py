@@ -357,7 +357,7 @@ if st.session_state.user_role == "admin_pending":
     col_login1, col_login2, col_login3 = st.columns([1, 2, 1])
     with col_login2:
         admin_password = st.text_input(
-            "Enter Admin Password", type="password", placeholder="Enter password")
+            "Enter Admin Password", type="password", placeholder="Enter password").lower()
 
         col1, col2 = st.columns(2)
         with col1:
@@ -486,7 +486,7 @@ else:
     with col_type:
         user_type = st.radio(
             "User Type *",
-            ["FAT's", "GFS"],
+            ["FAT's", "GFS", "DCAT"],
             horizontal=True,
             label_visibility="collapsed"
         )
@@ -543,7 +543,7 @@ else:
         selected_uom = st.selectbox("Unit *", unit_options)
 
         submitted = st.form_submit_button(
-            "ᯓ➤ Submit Sales", use_container_width=True, type="primary")
+            "Submit Sales", use_container_width=True, type="primary")
 
     # -----------FORM SUBMISSION-------------------
     if submitted:
