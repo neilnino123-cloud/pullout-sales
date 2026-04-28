@@ -22,7 +22,6 @@ products = {
     "MULTIMAX D5" : {"PC", "BOX", "BOTTLE", "PAD"},
     "DOX-C-LIN GOLD" : {"PC", "BOX", "BOTTLE", "PAD"},
     "DOX-C-TRIN GOLD" : {"PC", "BOX", "BOTTLE", "PAD"},
-    "WORM-X MAXX" : {"PC", "BOX", "BOTTLE", "PAD"},
     "IRON-VET" : {"PC", "BOX", "BOTTLE", "PAD"},
     "BULATIGOK SD" : {"PC", "BOX", "BOTTLE", "PAD"},
     "TRIFAST" : {"PC", "BOX", "BOTTLE", "PAD"},
