@@ -32,6 +32,9 @@ if "user_role" not in st.session_state:
 
 if "admin_authenticated" not in st.session_state:
     st.session_state.admin_authenticated = False
+
+if "admin_password_processed" not in st.session_state:
+    st.session_state.admin_password_processed = ""
 # -------- END OF SESSION ------------
 
 # -----------CONFIGURATION (Hardcoded for easy updates)--------------------
@@ -355,9 +358,12 @@ if st.session_state.user_role == "admin_pending":
     """, unsafe_allow_html=True, text_alignment="center")
 
     col_login1, col_login2, col_login3 = st.columns([1, 2, 1])
+    def force_lower():
+        st.session_state.admin_password_processed = st.session_state._pass_raw.lower()
+
     with col_login2:
         admin_password = st.text_input(
-            "Enter Admin Password", type="password", placeholder="Enter password").lower()
+            "Enter Admin Password", type="password", placeholder="Enter password" on_change=force_lower)
 
         col1, col2 = st.columns(2)
         with col1:
