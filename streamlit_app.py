@@ -901,6 +901,7 @@ else:
         if st.button("🔒 End Session", use_container_width=True, type="secondary"):
             st.session_state.data = []
             st.session_state.selected_product = "-- Select Product --"
+            st.session_state.selected_store = "-- Select Store --"
             st.success("✅ Session ended. All session data has been cleared.")
             st.rerun()
     else:
