@@ -157,11 +157,11 @@ st.markdown("""
     
     /* Force all text inputs to display as uppercase */
     input[type="text"], input[type="number"]{
-        text-transform: !important;
+        text-transform: uppercase !important;
     }
     /* Also style Streamlit's specific input styling */
     .stTextInput input, .stNumberInput input {
-        text-transform: !important;
+        text-transform: uppercase !important;
     }
     /* Navy blue ALL buttons */
     div.stButton > button {
