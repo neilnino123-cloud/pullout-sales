@@ -14,6 +14,13 @@ products = {
     "WORM X": {"PAD", "BOX"},
     "WORM X MAXX": {"PAD", "BOX"}
 }
+stores = {
+    "ACF AGRIVET",
+    "JP STORE",
+    "RJM AGRIVET",
+    "AGRIVET KO",
+    "CIANIANA"
+}
 
 # -----------SESSION-------------------
 if "data" not in st.session_state:
@@ -29,6 +36,11 @@ elif st.session_state.selected_product not in products:
 
 if "user_role" not in st.session_state:
     st.session_state.user_role = None
+
+if "stores" not in st.session_state:
+    st.session_state.selected_store = "-- Select Store --"
+elif st.session_state.selected_store not in stores:
+    st.session_state.selected_store = "-- Select Store --"
 
 if "admin_authenticated" not in st.session_state:
     st.session_state.admin_authenticated = False
@@ -390,6 +402,7 @@ with col2:
         st.session_state.admin_authenticated = False
         st.session_state.data = []
         st.session_state.selected_product = "-- Select Product --"
+        st.session_state.selected_store = "-- Select Store --"
         st.rerun()
 
 st.divider()
@@ -496,9 +509,12 @@ else:
         user_name = st.text_input(
             "Name *", placeholder="Enter Full Name").upper()
     with col2:
-        store_name = st.text_input(
-            "SUKING TINDAHAN *", placeholder="Enter Store Name").upper()
-
+        selected_store = st.selectbox(
+            "SUKING TINDAHAN *", ["-- Select Store --"] + list(stores),
+            index=0 if st.session_state.selected_store == "-- Select Store --"
+            else list(stores).index(st.session_state.selected_store) + 1
+            ),
+        
     st.divider()
 
     # -----------PRODUCT SELECTION (Outside Form)-------------------
@@ -554,7 +570,7 @@ else:
             errors.append("Name is required")
         if not user_type:
             errors.append("User type is required")
-        if not store_name.strip():
+        if not selected_store.strip():
             errors.append("Store name is required")
         if selected_product == "-- Select Product --":
             errors.append("Please select a product")
@@ -576,7 +592,7 @@ else:
                 "Timestamp": timestamp,
                 "User Type": user_type,
                 "Name": user_name.strip().upper(),
-                "Store Name": store_name.strip().upper(),
+                "Store Name": selected_store.strip().upper(),
                 "Product": selected_product.upper(),
                 "Qty": quantity,
                 "UOM": selected_uom.upper()
