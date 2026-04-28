@@ -12,8 +12,23 @@ products = {
     "PPG": {"SACHET", "BOX"},
     "FEATHERSHINE": {"SACHET", "BOX"},
     "WORM X": {"PAD", "BOX"},
-    "WORM X MAXX": {"PAD", "BOX"}
+    "WORM X MAXX": {"PAD", "BOX"},
+    "-- OTHERS --" : {},
+    "DOXA-V" : {"PC", "BOX", "BOTTLE", "PAD"},
+    "PARA-V" : {"PC", "BOX", "BOTTLE", "PAD"},
+    "TRIMAX" : {"PC", "BOX", "BOTTLE", "PAD"},
+    "MULTIMAX" : {"PC", "BOX", "BOTTLE", "PAD"},
+    "ELECTROMAX" : {"PC", "BOX", "BOTTLE", "PAD"},
+    "MULTIMAX D5" : {"PC", "BOX", "BOTTLE", "PAD"},
+    "DOX-C-LIN GOLD" : {"PC", "BOX", "BOTTLE", "PAD"},
+    "DOX-C-TRIN GOLD" : {"PC", "BOX", "BOTTLE", "PAD"},
+    "WORM-X MAXX" : {"PC", "BOX", "BOTTLE", "PAD"},
+    "IRON-VET" : {"PC", "BOX", "BOTTLE", "PAD"},
+    "BULATIGOK SD" : {"PC", "BOX", "BOTTLE", "PAD"},
+    "TRIFAST" : {"PC", "BOX", "BOTTLE", "PAD"},
+    "ALAMYCIN LA" : {"PC", "BOX", "BOTTLE", "PAD"}
 }
+
 stores = {
     "B AND E AGRIVET SUPPLY & VETERINARY SERVICES",
     "GWYN AGRIVET SUPPLIES & PET CARE SERVICES",
@@ -767,7 +782,7 @@ else:
 
     selected_product = st.selectbox(
         "Product *", ["-- Select Product --"] + list(products.keys()),
-        index=0 if st.session_state.selected_product == "-- Select Product --"
+        index=0 if st.session_state.selected_product == "-- Select Product --" or "-- OTHERS --"
         else list(products.keys()).index(st.session_state.selected_product) + 1
     )
 
