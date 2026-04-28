@@ -156,7 +156,7 @@ st.markdown("""
     }
     
     /* Force all text inputs to display as uppercase */
-    input[type="text"], input[type="number"], input[type="password"] {
+    input[type="text"], input[type="number"]{
         text-transform: uppercase !important;
     }
     /* Also style Streamlit's specific input styling */
