@@ -352,7 +352,7 @@ if st.session_state.user_role == "admin_pending":
     <h2 style='margin-bottom: 5px;'>🔒 Admin Authentication Required</h2>
     <p style='color: #888; margin-top: 0;'>Enter your admin password to continue</p>
     </div>
-    """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True, text_alignment="center")
 
     col_login1, col_login2, col_login3 = st.columns([1, 2, 1])
     with col_login2:
@@ -361,7 +361,7 @@ if st.session_state.user_role == "admin_pending":
 
         col1, col2 = st.columns(2)
         with col1:
-            if st.button("🔓 Verify & Continue", use_container_width=True, type="primary", align="center"):
+            if st.button("🔓 Verify & Continue", use_container_width=True, type="primary"):
                 if admin_password == ADMIN_CREDENTIALS["password"]:
                     st.session_state.admin_authenticated = True
                     st.session_state.user_role = "admin"
