@@ -750,7 +750,10 @@ else:
             "SUKING TINDAHAN *", ["-- Select Store --"] + list(stores),
             index=0 if st.session_state.selected_store == "-- Select Store --"
             else list(stores).index(st.session_state.selected_store) + 1
-            ),
+            )
+        if selected_store != st.session_state.selected_store:
+            st.session_state.selected_store = selected_store
+            st.rerun()
         
     st.divider()
 
