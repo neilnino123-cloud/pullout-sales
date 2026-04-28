@@ -482,7 +482,7 @@ else:
     """, unsafe_allow_html=True)
 
     # Radio buttons for user type - placed beside the text input
-    col_type, col_empty = st.columns([1, 4])
+    col_type, col_empty = st.columns([2, 3])
     with col_type:
         user_type = st.radio(
             "User Type *",
