@@ -361,7 +361,7 @@ if st.session_state.user_role == "admin_pending":
 
         col1, col2 = st.columns(2)
         with col1:
-            if st.button("🔓 Verify & Continue", use_container_width=True, type="primary"):
+            if st.button("🔓 Verify & Continue", use_container_width=True, type="primary", align="center"):
                 if admin_password == ADMIN_CREDENTIALS["password"]:
                     st.session_state.admin_authenticated = True
                     st.session_state.user_role = "admin"
