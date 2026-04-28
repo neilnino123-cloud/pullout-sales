@@ -567,7 +567,7 @@ if st.session_state.user_role is None:
 
     # Role selection - responsive columns
     # On mobile: full width, on desktop: centered
-    col1, col2, col3 = st.columns([1, 1, 1])
+    col1, col2, col3 = st.columns([1, 1, 1], vertical_alignment="center")
     with col2:
         # Use horizontal radio on desktop, vertical on mobile
         role = st.radio(
