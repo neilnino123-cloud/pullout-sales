@@ -567,6 +567,13 @@ if st.session_state.user_role is None:
 
     # Role selection - responsive columns
     # On mobile: full width, on desktop: centered
+    st.markdown("""
+        <style>
+            .stRadio{ align-items: center;
+                justify-content: center;
+                }
+        </style>""", unsafe_allow_html=True)
+
     col1, col2, col3 = st.columns([1, 6, 1])
     with col2:
         # Use horizontal radio on desktop, vertical on mobile
