@@ -577,7 +577,6 @@ if st.session_state.user_role is None:
             horizontal=True,
             label_visibility="collapsed",
             key="role_selection",
-            vertical_alignment="center"
         )
 
         if st.button("Continue", use_container_width=True, type="primary"):
