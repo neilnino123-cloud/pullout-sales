@@ -582,7 +582,6 @@ if st.session_state.user_role is None:
             ["👤 User (Add Transactions)", "👨‍ Admin (View All)"],
             index=0,
             horizontal=True,
-            vertical=True,
             label_visibility="collapsed",
             key="role_selection"
         )
