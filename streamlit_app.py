@@ -826,6 +826,8 @@ else:
             errors.append("User type is required")
         if not selected_store.strip():
             errors.append("Store name is required")
+        if selected_store == "-- Select Store --":
+            errors.append("Please select a store")
         if selected_product == "-- Select Product --":
             errors.append("Please select a product")
         if selected_uom == "-- Select Unit --":
